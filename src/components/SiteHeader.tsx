@@ -15,6 +15,8 @@ const links = [
   { href: "/contacto", label: "Contacto" },
 ];
 
+const whatsappUrl = `https://wa.me/5493476596260?text=${encodeURIComponent("Hola, estuve visitando la web de Caicos Eventos, quisiera mas información sobre...")}`;
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -44,9 +46,9 @@ export default function SiteHeader() {
           <a href="https://www.instagram.com/caicos.eventos/" target="_blank" rel="noreferrer" aria-label="Instagram de CAICOS" className="transition-transform hover:scale-110">
             <Image src="/images/insta.svg" width={30} height={30} alt="" />
           </a>
-          <Link href={process.env.NEXT_PUBLIC_CAICOS_WHATSAPP ? `https://wa.me/${process.env.NEXT_PUBLIC_CAICOS_WHATSAPP.replace(/\D/g, "")}` : "/contacto"} target={process.env.NEXT_PUBLIC_CAICOS_WHATSAPP ? "_blank" : undefined} rel={process.env.NEXT_PUBLIC_CAICOS_WHATSAPP ? "noreferrer" : undefined} aria-label="WhatsApp de CAICOS" className="transition-transform hover:scale-110">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de CAICOS" className="transition-transform hover:scale-110">
             <Image src="/images/wsp.svg" width={30} height={30} alt="" />
-          </Link>
+          </a>
         </div>
         <button type="button" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="caicos-mobile-menu" className="inline-flex items-center justify-center p-3 lg:hidden" onClick={() => setOpen((v) => !v)}>
           {open ? <X /> : <Menu />}
