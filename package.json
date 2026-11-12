@@ -9,6 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "better-auth": "^1.7.19",
+    "lucide-react": "^1.64.0",
+    "motion": "^14.8.0",
+    "mysql2": "^3.24.6",
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0"

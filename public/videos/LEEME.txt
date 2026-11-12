@@ -1,0 +1,9 @@
+Para usar un video real en la portada:
+1. Guardá aquí el archivo caicos-hero.mp4, optimizado y con derechos de uso.
+2. Creá un .env.local en la raíz del proyecto con:
+   NEXT_PUBLIC_CAICOS_HERO_VIDEO=/videos/caicos-hero.mp4
+3. Reiniciá npm run dev.
+La portada usa /images/caicos-hero-poster.jpg mientras carga el video.
+Si reemplazás el video, actualizá también su portada con el primer fotograma:
+ffmpeg -i public\videos\caicos-hero.mp4 -frames:v 1 -vf "scale=1920:-2" -q:v 2 -y public\images\caicos-hero-poster.jpg
+Sin la variable de video, la portada utiliza una fotografía temporal.
