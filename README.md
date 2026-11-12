@@ -30,7 +30,7 @@ En otra terminal:
 npx cloudflared tunnel --url http://localhost:3001
 ```
 
-El hostname generado debe estar en `allowedDevOrigins` en `next.config.ts`
+El hostname generado debe estar en `allowedDevOrigins` en `next.config.mjs`
 (sin `https://`). Si reinicias el tunel y cambia la URL, actualiza ese valor.
 Reinicia el servidor de desarrollo si no recarga la configuracion y luego
 recarga la pagina. Mantene ambas terminales abiertas durante la vista previa.
@@ -53,6 +53,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Produccion en Hostinger Node.js
+
+- Seleccionar Next.js, Node.js 22, raiz `./`, comando `npm run build` y salida `.next`.
+- La configuracion usa `next.config.mjs` para evitar compilar TypeScript al cargarla.
+- El build usa Webpack; permite usar el fallback WASM de SWC cuando el servidor
+  no puede cargar el binario nativo por su version de GLIBC. Tailwind se procesa
+  con `postcss.config.mjs`, tanto en desarrollo como en produccion.
+- Configurar las variables de entorno en Hostinger e importar por separado las
+  tablas y los datos MySQL. No subir archivos de entorno ni volcados SQL al repositorio.
+- Si tambien falla el fallback WASM, solicitar a Hostinger un entorno compatible
+  con los requisitos del binario nativo de Next.js; no modificar GLIBC manualmente.
 
 ## Panel de disponibilidad
 
