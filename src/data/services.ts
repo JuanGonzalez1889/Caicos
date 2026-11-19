@@ -32,7 +32,7 @@ export const services: Service[] = [
     short: "Un día único, infinitas maneras de vivirlo y sentirlo.",
     description:
       "Una propuesta visual y de ambientación para imaginar cómo querés celebrar una ocasión especial.",
-    image: "/images/casamientos.png",
+    image: "/images/social.png",
     gallery: [
       {
         src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85",
@@ -55,7 +55,7 @@ export const services: Service[] = [
     short: "Un espacio para crear tu propia experiencia.",
     description:
       "Un punto de partida para organizar celebraciones y encuentros de distintas características.",
-    image: "/images/empresariales.png",
+    image: "/images/empresa.png",
     gallery: [
       {
         src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85",
